@@ -16,7 +16,7 @@ https://github.com/user-attachments/assets/06ce64fe-b78c-4e6d-a678-70de533a19d3
 
 ## Project Structure
 
-```sh
+```bash
 es04_guitar_hero/
 ├── src/                           # SystemVerilog source files & build
 │   ├── apio.ini                   # Apio build configuration
