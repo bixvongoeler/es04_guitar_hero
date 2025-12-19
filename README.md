@@ -1,10 +1,18 @@
 # ES04 Final Project: Guitar Hero
 
-FPGA-based Guitar Hero clone for UPDuino 3.1.
+_Project Group: Bix Von Goeler, Johnny Getman, Erica Huang, Kaiden Khalsha_
 
-## Circuit
+---
 
-![assets/circuit.png](assets/circuit.png)
+## Gameplay Demo:
+
+https://github.com/user-attachments/assets/06ce64fe-b78c-4e6d-a678-70de533a19d3
+
+## Circuit:
+
+<p align="center">
+  <img src="assets/circuit.png" width=50%>
+</p>
 
 ## Project Structure
 
