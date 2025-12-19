@@ -1,0 +1,62 @@
+#*******************************************************************************
+#*   @file: guitar_hero.pcf
+#*  @brief: defines the physical pin assignments for project
+#******************************************************************************/
+
+# ------------------------------------------------------------------------------
+# Clock
+# ------------------------------------------------------------------------------
+set_io osc 20                    # 12MHz external oscillator
+
+# ------------------------------------------------------------------------------
+# Buttons (active low with internal pull-ups)
+# ------------------------------------------------------------------------------
+set_io -pullup yes BTN_PLAY 46   # Start playback
+set_io -pullup yes BTN_RESET 2   # Stop playback
+
+# ------------------------------------------------------------------------------
+# Debug LEDs [3:0] = {Red, Yellow, Green, Blue}
+# ------------------------------------------------------------------------------
+set_io DLEDS[0] 45               # Blue
+set_io DLEDS[1] 48               # Green
+set_io DLEDS[2] 3                # Yellow
+set_io DLEDS[3] 4                # Red
+
+# ------------------------------------------------------------------------------
+# Guitar Hero Controller
+# ------------------------------------------------------------------------------
+
+set_io -pullup no white_button 44
+set_io -pullup no blue_button 6
+set_io -pullup no green_button 9
+set_io -pullup no yellow_button 11
+set_io -pullup no orange_button 18
+
+# ------------------------------------------------------------------------------
+# SD Card (SPI Mode)
+# ------------------------------------------------------------------------------
+set_io SD_CS 19                  # Chip select (active low)
+set_io SD_SCK 13                 # SPI clock
+set_io SD_MOSI 21                # Master out, slave in
+set_io -pullup yes SD_MISO 12    # Master in, slave out (pull-up for idle high)
+
+# ------------------------------------------------------------------------------
+# VGA Display
+# ------------------------------------------------------------------------------
+
+set_io rgb[5] 28
+set_io rgb[4] 38
+set_io rgb[3] 42
+set_io rgb[2] 36
+set_io rgb[1] 43
+set_io rgb[0] 34
+set_io HSYNC 37         #output
+set_io VSYNC 31         #output
+set_io locked 35
+
+# ------------------------------------------------------------------------------
+# I2S Amplifier (MAX98357)
+# ------------------------------------------------------------------------------
+set_io AMP_LRC 26                # Left/Right clock (LRCLK)
+set_io AMP_BCLK 25               # Bit clock
+set_io AMP_DIN 23                # Serial data
