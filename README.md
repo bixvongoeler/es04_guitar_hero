@@ -1,6 +1,13 @@
 # ES04 Final Project: Guitar Hero
 
-_Project Group: Bix Von Goeler, Johnny Getman, Erica Huang, Kaiden Khalsha_
+A Guitar Hero inspired rhythm arcade game implemented entirely in SystemVerilog on an iCE40 Upduino-3.1 FPGA. The simulated hardware is comprised of four major subsystems:
+
+1. A graphics engine that outputs analog VGA signals using shift registers for note rendering and animation
+2. 46 kHz audio playback through an I2S audio amp using buffered 16-bit sample data read directly from a Micro SD card.
+3. Game logic handling real-time hit detection, scoring, and note chart parsing from 8-bit patterns flashed into fpga memory.
+4. A controller interface capturing fret button and strum inputs with strum-gated note registration.
+
+Audio and visuals are synchronized via clock division from a 25.125 MHz PLL system clock. Note charts are encoded and generated using a Python script converting MIDI files to 8-bit patterns (2-bits per lane). Using an additional python script, audio is resampled, converted, and written directly to the MicroSD card sectors (bypassing the standard file structure due to FPGA resource contraints).
 
 ---
 
